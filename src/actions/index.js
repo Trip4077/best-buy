@@ -12,6 +12,6 @@ export const getData = () => dispatch => {
           dispatch({ type: GET_SUCCESS, payload: res.data.amiibo })
         )
         .catch(err =>
-          dispatch({ type: GET_FAIL, payload: err }) 
+          dispatch({ type: GET_FAIL, payload: err })
         )
 }

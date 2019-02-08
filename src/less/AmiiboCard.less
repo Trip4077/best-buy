@@ -1,0 +1,71 @@
+.amiibo {
+  border: 1px solid red;
+  box-sizing: border-box;
+
+  width: 23%;
+  height: 550px;
+  padding: 25px;
+
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+
+  img {
+    max-width: 400px;
+    max-height:200px;
+  }
+
+  h2, h3 {
+    font-size: 1.8rem;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  .amiibo__release {
+    width: 100%;
+    box-sizing: border-box;
+
+    text-align: center;
+  }
+
+  .amiibo__release h3 {
+    font-size: 1.8rem;
+    width: 100%;
+
+    padding: 5px 0;
+    background-color: black;
+    color: white;
+
+    cursor: pointer;
+  }
+
+  .amiibo__release__dates {
+    height: 0px;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
+
+    transition: height .3s;
+
+    font-size: 1.6rem;
+  }
+
+  .amiibo__release__dates--active {
+    height: 75px;
+
+  }
+}

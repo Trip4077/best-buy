@@ -4,7 +4,7 @@ import AmiiboCard from './components/AmiiboCard';
 import { connect } from 'react-redux';
 import { getData } from './actions';
 
-import './App.css';
+import './css/index.css';
 
 class App extends Component {
 
