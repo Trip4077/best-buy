@@ -31,7 +31,7 @@ export const getDataReducer = (state= initialState, action) => {
         getActive: false,
         err: action.payload
       }
-      
+
     default:
       return state;
   }

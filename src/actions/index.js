@@ -15,3 +15,11 @@ export const getData = () => dispatch => {
           dispatch({ type: GET_FAIL, payload: err })
         )
 }
+
+export const ADD_FAVORITE = 'ADD_FAVORITE';
+
+export const getFav = (card, arr) => dispatch => {
+  arr.push(card);
+  console.log(arr)
+  dispatch({ type: ADD_FAVORITE, payload: arr })
+}

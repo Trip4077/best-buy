@@ -26,6 +26,10 @@
 
   h2, h3 {
     font-size: 1.8rem;
+
+    span {
+      font-weight: bold;
+    }
   }
 
   h4 {
@@ -62,10 +66,19 @@
     transition: height .3s;
 
     font-size: 1.6rem;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+
+      span:first-of-type {
+        font-weight: bold;
+        display: block;
+      }
+    }
   }
 
   .amiibo__release__dates--active {
     height: 75px;
-
   }
 }

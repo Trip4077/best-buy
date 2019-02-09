@@ -155,6 +155,10 @@ html {
 .amiibo h3 {
   font-size: 1.8rem;
 }
+.amiibo h2 span,
+.amiibo h3 span {
+  font-weight: bold;
+}
 .amiibo h4 {
   font-size: 1.4rem;
   font-weight: bold;
@@ -180,6 +184,14 @@ html {
 }
 .amiibo .amiibo__release__dates::-webkit-scrollbar {
   width: 0px;
+}
+.amiibo .amiibo__release__dates li {
+  display: flex;
+  justify-content: space-between;
+}
+.amiibo .amiibo__release__dates li span:first-of-type {
+  font-weight: bold;
+  display: block;
 }
 .amiibo .amiibo__release__dates--active {
   height: 75px;
