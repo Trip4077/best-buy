@@ -23,3 +23,23 @@ export const getFav = (card, arr) => dispatch => {
   console.log(arr)
   dispatch({ type: ADD_FAVORITE, payload: arr })
 }
+
+export const FILTER_ACTIVE = 'FILTER_ACTIVE';
+export const FILTER_SUCCESS = 'FILTER_SUCCESS';
+export const FILTER_CLEAR = 'FILTER_CLEAR';
+
+export const filterData = (cat, search, data) => dispatch => {
+  dispatch({ type: FILTER_ACTIVE });
+  const keyArr = cat.split(' ')
+  keyArr[0] = keyArr[0].toLowerCase();
+
+  const key = keyArr.join('')
+  const filtered = data.filter(item => item[key] === search);
+
+
+  dispatch({ type: FILTER_SUCCESS, payload: filtered })
+}
+
+export const clearFilter = () => {
+  return { type: FILTER_CLEAR }
+}

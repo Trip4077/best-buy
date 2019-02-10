@@ -22,8 +22,11 @@ class App extends Component {
 }
 
 const mstp = state => {
+  const stateData = state.filterReducer.data.length > 0 ? state.filterReducer.data : state.getDataReducer.data
+
   return {
-    ...state.getDataReducer
+    ...state.getDataReducer,
+    data: stateData
   }
 }
 

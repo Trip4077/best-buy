@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
+import { clearFilter, filterData } from '../actions';
 
 class FilterMenu extends React.Component {
   constructor(props) {
@@ -17,6 +18,16 @@ class FilterMenu extends React.Component {
     return result;
   }
 
+  filterData = e => {
+    e.preventDefault();
+
+    const search = e.target.innerText;
+    const category = e.target.parentNode.parentNode.childNodes[0].childNodes[0].innerText;
+    const data = this.props.data
+
+    this.props.filterData(category, search, data);
+  }
+
   render() {
     const amiiboS = this.getKeys('amiiboSeries');
     const gameS = this.getKeys('gameSeries');
@@ -28,7 +39,9 @@ class FilterMenu extends React.Component {
           </div>
 
           <ul>
-            {amiiboS.map(cat => <li key={Math.random()}>{cat}</li>)}
+            <li onClick={this.props.clearFilter}>Clear Filter</li>
+            {amiiboS.map(cat => <li key={Math.random()}
+                                    onClick={this.filterData}> {cat} </li>)}
           </ul>
         </form>
 
@@ -38,7 +51,9 @@ class FilterMenu extends React.Component {
           </div>
 
           <ul>
-            {gameS.map(cat => <li key={Math.random()}>{cat}</li>)}
+            <li onClick={this.props.clearFilter}>Clear Filter</li>
+            {gameS.map(cat => <li key={Math.random()}
+                                  onClick={this.filterData}> {cat}</li>)}
           </ul>
         </form>
       </section>
@@ -52,4 +67,4 @@ const mstp = state => {
   }
 }
 
-export default connect(mstp, {})(FilterMenu);
+export default connect(mstp, { clearFilter, filterData })(FilterMenu);
