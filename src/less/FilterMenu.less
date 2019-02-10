@@ -1,4 +1,4 @@
-.filter-menu {
+.filter-menu  {
   position: fixed;
   box-sizing: border-box;
   top: 0;
@@ -13,20 +13,36 @@
   display: flex;
   flex-direction: column;
 
-  overflow-x: hidden;
-  direction: rtl;
+  transition: transform .3s;
 
-  &::-webkit-scrollbar {
-    width: 10px;
+  .icon {
+    font-size: 2.6rem;
+    color: #b11a21;
+
+    position: absolute;
+    z-index: 500000;
+    top: 8px;
+    right: -35px;
+
+    cursor: pointer;
   }
 
-  &::-webkit-scrollbar-track {
-    background-color: grey;
-  }
+  div {
+    overflow-x: hidden;
+    direction: rtl;
 
-  &::-webkit-scrollbar-thumb {
-    background-color:  #b11a21;
-    border-radius: 8px;
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: grey;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color:  #b11a21;
+      border-radius: 8px;
+    }
   }
 
   .filter-menu__form {
@@ -57,4 +73,8 @@
       }
     }
   }
+}
+
+.closed {
+  transform: translateX(-225px);
 }
