@@ -272,6 +272,16 @@ html {
   color: white;
   cursor: pointer;
 }
+@media (max-width: 975px) {
+  .amiibo {
+    width: 33.25%;
+  }
+}
+@media (max-width: 710px) {
+  .amiibo {
+    width: 70%;
+  }
+}
 .filter-menu {
   position: fixed;
   box-sizing: border-box;
@@ -380,4 +390,18 @@ html {
   justify-content: flex-end;
   width: 80%;
   margin: 100px 50px 100px 210px;
+}
+@media (max-width: 975px) {
+  .browse {
+    margin: 100px 0 100px 100px;
+  }
+}
+@media (max-width: 710px) {
+  .browse {
+    margin: 0;
+    margin-left: 11%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
