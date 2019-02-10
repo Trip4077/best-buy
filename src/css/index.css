@@ -130,6 +130,73 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
+.ring {
+  position: relative;
+  top: 250px;
+  left: 3.5%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background: #f1f0ee;
+  border: 2px solid #3c3c3c;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 750%;
+  lfont-family: serif;
+  font-size: 20px;
+  color: #b11a21;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px #e0474c;
+  box-shadow: 0 0 30px #000000;
+}
+.ring:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 97%;
+  height: 97%;
+  border: 3px solid transparent;
+  border-right: 5px dashed #b11a21;
+  border-radius: 50%;
+  animation: ringloader 2s linear infinite;
+}
+.ring span {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(50% + 2.5px);
+  height: 4px;
+  background: transparent;
+  transform-origin: left;
+  animation: animate 2s linear infinite;
+}
+#trianglept {
+  height: 0;
+  width: 0;
+  border-left: 77px solid #b11a21;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-top: 2px solid transparent;
+}
+@keyframes ringloader {
+  0% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(350deg);
+  }
+}
+@keyframes animate {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
 .amiibo {
   border: 1px solid red;
   box-sizing: border-box;
@@ -264,5 +331,5 @@ html {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  margin: 0 auto;
+  margin: 100px auto;
 }

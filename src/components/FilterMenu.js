@@ -43,7 +43,7 @@ class FilterMenu extends React.Component {
     let panelIcon;
 
     this.state.isOpen ? panelStatus = '' : panelStatus = 'closed';
-    this.state.isOpen ? panelIcon = <i class="fas fa-window-close"></i> : panelIcon = <i class="fas fa-filter"></i>;
+    this.state.isOpen ? panelIcon = <i className="fas fa-window-close"></i> : panelIcon = <i className="fas fa-filter"></i>;
 
     return(
       <section className={`filter-menu ${panelStatus}`}>
