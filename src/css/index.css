@@ -263,6 +263,15 @@ html {
 .amiibo .amiibo__release__dates--active {
   height: 75px;
 }
+.amiibo button {
+  font-size: 1.8rem;
+  width: 100%;
+  border: none;
+  padding: 5px 0;
+  background-color: #b11a21;
+  color: white;
+  cursor: pointer;
+}
 .filter-menu {
   position: fixed;
   box-sizing: border-box;
@@ -307,6 +316,7 @@ html {
   padding: 10px;
 }
 .filter-menu .filter-menu__form div h3 {
+  direction: ltr;
   font-size: 2.2rem;
   color: white;
 }
@@ -349,6 +359,19 @@ html {
   height: 100%;
   display: flex;
   align-items: center;
+}
+.list {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: 100px auto;
+}
+.list .empty {
+  font-size: 3rem;
+  color: silver;
+  letter-spacing: 3px;
 }
 .browse {
   position: relative;

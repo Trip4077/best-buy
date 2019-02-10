@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import { getFav } from '../actions';
+import { getFav, deleteFav } from '../actions';
 
 const toggleRelease = e => {
   e.target.parentNode.childNodes[1].classList.toggle('amiibo__release__dates--active');
@@ -13,7 +13,19 @@ const AmiiboCard = props => {
   const handleFavorite = e => {
     e.preventDefault();
 
-    props.getFav(props.item, props.favorites)  
+    props.getFav(props.item, props.favorites)
+  }
+
+  const handleDelete = e => {
+    e.preventDefault();
+   const uniqueSrc = e.target.parentNode.childNodes[1].src;
+
+   const indexArr = props.favorites.map((item, i) => item.image === uniqueSrc ? i : null )
+   const index = indexArr.filter(item => typeof item === 'number')[0]
+
+   const newArr = [ ...props.favorites ]
+
+   props.deleteFav(index, newArr)
   }
 
   return(
@@ -34,7 +46,8 @@ const AmiiboCard = props => {
         </ul>
       </div>
 
-      <button onClick={handleFavorite}>Add to Favorites</button>
+      {props.fav ? <button onClick={handleDelete}>Remove</button>
+                 : <button onClick={handleFavorite}>Add to Favorites</button>}
     </div>
   );
 }
@@ -45,4 +58,4 @@ const mstp = state => {
   }
 }
 
-export default connect(mstp, { getFav })(AmiiboCard);
+export default connect(mstp, { getFav, deleteFav })(AmiiboCard);

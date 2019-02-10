@@ -12,7 +12,6 @@ class Browse extends React.Component {
   }
 
   render() {
-    console.log('PROPS', this.props.data.length > 0)
     return(
       <div className='browse'>
         <FilterMenu />

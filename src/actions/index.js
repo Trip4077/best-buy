@@ -17,11 +17,16 @@ export const getData = () => dispatch => {
 }
 
 export const ADD_FAVORITE = 'ADD_FAVORITE';
+export const DELETE_FAVORITE = 'DELETE_FAVORITE';
 
 export const getFav = (card, arr) => dispatch => {
   arr.push(card);
-  console.log(arr)
   dispatch({ type: ADD_FAVORITE, payload: arr })
+}
+
+export const deleteFav = (index, arr) => dispatch => {
+  arr.splice(index, 1);
+  dispatch({ type: DELETE_FAVORITE, payload: arr })
 }
 
 export const FILTER_ACTIVE = 'FILTER_ACTIVE';
