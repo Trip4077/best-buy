@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AmiiboCard from './components/AmiiboCard';
+import { Browse } from './views/Browse';
 
 import { connect } from 'react-redux';
 import { getData } from './actions';
@@ -15,7 +15,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.props.data && this.props.data.map( item => <AmiiboCard key={item.image} item={item} />)}
+        {this.props.data && <Browse data={this.props.data} />}
       </div>
     );
   }
