@@ -21,4 +21,4 @@ const mstp = state => {
   }
 }
 
-export default connect(mstp, { })(List);
+export default connect(mstp, {})(List);

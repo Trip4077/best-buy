@@ -133,7 +133,7 @@ html {
 .ring {
   position: relative;
   top: 250px;
-  left: 3.5%;
+  right: 45%;
   transform: translate(-50%, -50%);
   width: 150px;
   height: 150px;
@@ -377,7 +377,7 @@ html {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  margin: 100px auto;
+  justify-content: flex-end;
+  width: 80%;
+  margin: 100px 50px 100px 210px;
 }
