@@ -45,6 +45,7 @@ export const filterData = (cat, search, data) => dispatch => {
   dispatch({ type: FILTER_SUCCESS, payload: filtered })
 }
 
-export const clearFilter = () => {
-  return { type: FILTER_CLEAR }
+export const clearFilter = () => dispatch => {
+  dispatch({ type: FILTER_ACTIVE });
+  dispatch({ type: FILTER_CLEAR });
 }

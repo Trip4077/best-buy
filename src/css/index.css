@@ -133,7 +133,7 @@ html {
 .ring {
   position: relative;
   top: 250px;
-  right: 45%;
+  right: 0;
   transform: translate(-50%, -50%);
   width: 150px;
   height: 150px;
@@ -197,12 +197,19 @@ html {
     transform: rotate(405deg);
   }
 }
+@media (max-width: 710px) {
+  .ring {
+    top: 300px;
+    right: -75px;
+  }
+}
 .amiibo {
   border: 1px solid red;
   box-sizing: border-box;
   width: 23%;
   height: 550px;
   padding: 25px;
+  margin: 5px;
   overflow-x: hidden;
   overflow-y: hidden;
   display: flex;
@@ -274,12 +281,26 @@ html {
 }
 @media (max-width: 975px) {
   .amiibo {
-    width: 33.25%;
+    width: 40%;
+  }
+  .amiibo h1 {
+    font-size: 2.2rem;
+  }
+  .amiibo h2,
+  .amiibo h3 {
+    font-size: 1.8rem;
   }
 }
 @media (max-width: 710px) {
   .amiibo {
-    width: 70%;
+    width: 95%;
+  }
+  .amiibo h1 {
+    font-size: 1.8rem;
+  }
+  .amiibo h2,
+  .amiibo h3 {
+    font-size: 1.4rem;
   }
 }
 .filter-menu {
@@ -345,6 +366,27 @@ html {
 .closed {
   transform: translateX(-225px);
 }
+@media (max-width: 710px) {
+  .filter-menu {
+    max-width: none;
+    width: 85%;
+  }
+  .filter-menu .icon {
+    background-color: #b11a21;
+    color: white;
+    padding: 8px 8px;
+    top: 0;
+  }
+  .filter-menu .filter-menu__form ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .closed {
+    transform: translateX(-295px);
+    max-width: 300px;
+  }
+}
 .nav-bar {
   background-color: #f1f0ee;
   border-bottom: 2px solid #b11a21;
@@ -387,13 +429,14 @@ html {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
   width: 80%;
   margin: 100px 50px 100px 210px;
 }
 @media (max-width: 975px) {
   .browse {
     margin: 100px 0 100px 100px;
+    justify-content: flex-end;
   }
 }
 @media (max-width: 710px) {

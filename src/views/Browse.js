@@ -15,7 +15,7 @@ class Browse extends React.Component {
     return(
       <div className='browse'>
         <FilterMenu />
-        {this.props.getActive ? <Loader /> : this.props.data.map( item => <AmiiboCard key={item.image} item={item} /> ) }
+        {this.props.getActive || this.props.filterActive ? <Loader /> : this.props.data.map( item => <AmiiboCard key={item.image} item={item} /> ) }
       </div>
     );
   }
@@ -26,6 +26,7 @@ const mstp = state => {
 
   return {
     ...state.getDataReducer,
+    filterActive: state.filterReducer.filterActive,
     data: stateData
   }
 }

@@ -82,3 +82,30 @@
 .closed {
   transform: translateX(-225px);
 }
+
+@media(max-width: 710px) {
+  .filter-menu {
+    max-width: none;
+    width: 85%;
+
+    .icon {
+      background-color: #b11a21;
+      color: white;
+      padding: 8px 8px;
+      top: 0;
+    }
+
+    .filter-menu__form {
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  .closed {
+    transform: translateX(-295px);
+    max-width: 300px;
+  }
+}
