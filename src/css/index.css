@@ -412,6 +412,34 @@ html {
   display: flex;
   align-items: center;
 }
+.search {
+  width: 30%;
+  margin-right: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.search .search__input {
+  width: 60%;
+  height: 20px;
+  background-color: transparent;
+  border: 2px solid rgba(224, 71, 76, 0.25);
+  padding: 0 15px;
+  transition: border 0.5s, background-color 0.5s;
+}
+.search .search__input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 2px solid #e0474c;
+}
+.search .search__btn {
+  border: none;
+  padding: 3px 30px;
+  background-color: #b11a21;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
 .list {
   position: relative;
   display: flex;
