@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { searchCheck } from '../actions';
 
 class Search extends React.Component {
   constructor(props) {
@@ -17,6 +19,12 @@ class Search extends React.Component {
     });
   }
 
+  handleSearch = e => {
+    e.preventDefault();
+
+    this.props.searchCheck(this.props.data, this.state.searchTerm)
+  }
+
   render() {
     return(
       <form className='search'>
@@ -26,10 +34,16 @@ class Search extends React.Component {
                onChange={this.handleChange}
                value={this.state.searchTerm} />
 
-        <button className='search__btn'>Search</button>
+        <button onClick={this.handleSearch} className='search__btn'>Search</button>
       </form>
     );
   }
 }
 
-export default Search;
+const mstp = state => {
+  return {
+    data: state.getDataReducer.data
+  }
+}
+
+export default connect(mstp, { searchCheck })(Search);

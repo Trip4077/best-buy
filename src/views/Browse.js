@@ -22,7 +22,8 @@ class Browse extends React.Component {
 }
 
 const mstp = state => {
-  const stateData = state.filterReducer.data.length > 0 ? state.filterReducer.data : state.getDataReducer.data
+  let stateData = state.filterReducer.data.length > 0 ? state.filterReducer.data : state.getDataReducer.data
+  stateData = state.searchReducer.result.length > 0 ? state.searchReducer.result : state.getDataReducer.data
 
   return {
     ...state.getDataReducer,
