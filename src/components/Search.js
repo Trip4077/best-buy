@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { searchCheck } from '../actions';
+import { searchCheck, searchClear } from '../actions';
 
 class Search extends React.Component {
   constructor(props) {
@@ -26,6 +26,11 @@ class Search extends React.Component {
   }
 
   render() {
+
+    if(this.state.searchTerm.length < 1) {
+      this.props.searchClear();
+    }
+
     return(
       <form className='search'>
         <input className='search__input'
@@ -46,4 +51,4 @@ const mstp = state => {
   }
 }
 
-export default connect(mstp, { searchCheck })(Search);
+export default connect(mstp, { searchCheck, searchClear })(Search);

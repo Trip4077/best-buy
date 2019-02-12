@@ -1,4 +1,4 @@
-import { SEARCH_CHECK } from '../actions';
+import { SEARCH_CHECK, SEARCH_CLEAR } from '../actions';
 
 const initialState = {
   term: '',
@@ -11,6 +11,13 @@ export const searchReducer = (state = initialState, action) => {
       return {
         ...state,
         result: action.payload
+      }
+    }
+
+    case SEARCH_CLEAR: {
+      return {
+        ...state,
+        result: []
       }
     }
 

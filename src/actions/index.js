@@ -51,10 +51,15 @@ export const clearFilter = () => dispatch => {
 }
 
 export const SEARCH_CHECK = 'SEARCH_CHECK';
+export const SEARCH_CLEAR = 'SEARCH_CLEAR';
 
 export const searchCheck = (data, term) => dispatch => {
   const search = term.toLowerCase();
   const result = data.filter(item => item.name.toLowerCase().includes(search));
 
   dispatch({ type: SEARCH_CHECK, payload: result });
+}
+
+export const searchClear = () => dispatch => {
+  dispatch({ type: SEARCH_CLEAR });
 }
